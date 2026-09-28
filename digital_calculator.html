@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Calculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Digital Calculator</h1>
+<p>Arithmetic operations with history</p>
+</header>
+<main>
+<section aria-labelledby="calc-title">
+<h2 id="calc-title">Calculator</h2>
+<form id="calc-form" autocomplete="off">
+<label for="display">Expression and result</label>
+<input id="display" name="display" type="text" placeholder="0" aria-live="polite">
+<div id="status" role="status" aria-live="polite"></div>
+<div class="keys">
+<button type="button" data-action="clear">C</button>
+<button type="button" data-action="delete">DEL</button>
+<button type="button" data-value="%">%</button>
+<button type="button" data-value="/">÷</button>
+<button type="button" data-value="7">7</button>
+<button type="button" data-value="8">8</button>
+<button type="button" data-value="9">9</button>
+<button type="button" data-value="*">×</button>
+<button type="button" data-value="4">4</button>
+<button type="button" data-value="5">5</button>
+<button type="button" data-value="6">6</button>
+<button type="button" data-value="-">−</button>
+<button type="button" data-value="1">1</button>
+<button type="button" data-value="2">2</button>
+<button type="button" data-value="3">3</button>
+<button type="button" data-value="+">+</button>
+<button type="button" data-value="(">(</button>
+<button type="button" data-value="0">0</button>
+<button type="button" data-value=")">)</button>
+<button type="button" data-value=".">.</button>
+<button type="submit" data-action="equals" class="equals">=</button>
+</div>
+</form>
+<table>
+<thead>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td>+ - * / %</td><td>Operators</td></tr>
+<tr><td>C</td><td>Clear</td></tr>
+<tr><td>DEL</td><td>Delete</td></tr>
+</tbody>
+</table>
+</section>
+<section aria-labelledby="history-title">
+<h2 id="history-title">History</h2>
+<div class="history-bar">
+<label for="filter">Filter history</label>
+<select id="filter">
+<option value="all">All</option>
+<option value="+">Plus</option>
+<option value="-">Minus</option>
+<option value="*">Multiply</option>
+<option value="/">Divide</option>
+<option value="%">Percent</option>
+</select>
+<button type="button" id="clearHistory">Clear History</button>
+</div>
+<p id="emptyMsg">No calculations yet.</p>
+<ul id="historyList"></ul>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
